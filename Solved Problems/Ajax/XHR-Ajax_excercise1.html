@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Forms</title>
+    <header style="font-size: 14pt; color:white; background-color: black; text-align: center;display:inline">AJAX</header>
+    <hr>
+    <div id="logger"></div>
+    <hr>
+</head>
+<script>
+    var logg = document.getElementById("logger");
+ 
+    const sendAJaxRequest = () => {
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = mycallBack;
+ 
+        request.open("GET", "https://jsonplaceholder.typicode.ocm/comments/id=7");
+        request.send("?id=7");
+ 
+    };
+ 
+    mycallBack = (evt) => {        
+        if ((evt.currentTarget.readyState == 4)
+            && (evt.currentTarget.status == 200 || evt.currentTarget.status == 0)) {
+            var json_data = JSON.parse(evt.currentTarget.responseText);
+            logg.innerHTML=logg.innerHTML + 
+           // ` postId : ${json_data[7].postId}`;
+        //    logg.innerHTML=logg.innerHTML + 
+            `id  : ${json_data[6].id}`;
+            logg.innerHTML=logg.innerHTML + 
+            `<br>  Name  : ${json_data[6].name}`;
+            logg.innerHTML=logg.innerHTML +
+             `<br> body :
+              ${JSON.stringify(json_data[6].body)}`;
+ 
+            logg.innerHTML=logg.innerHTML +
+             `<br><br> All details  : ${JSON.stringify(json_data[6] )}`;
+ 
+        }
+    }
+ 
+</script>
+ 
+<body>
+    
+ 
+    <button onclick="sendAJaxRequest();">Click here to send an Ajax request</button>
+</body>

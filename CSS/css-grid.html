@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        div{
+            background: #659494;
+            border:1px solid lightblue;
+            margin:5px;
+            padding:5px;
+        }
+            
+        .section_grid
+        {
+           display:grid;
+           grid-template-columns: repeat(3,1fr);
+           grid-template-rows:repeat(3,1fr)
+        }
+        .products{
+            grid-row: span 2;
+        }
+    </style>
+
+<section class="section_grid">
+    <div>Product 1</div>
+    <div>Product 2 Product 2 Product 2 
+        Product 2 Product 2 Product 2</div>
+    <div>Product 3</div>
+    <div>Product 4</div>
+    <div class="products">Product 5</div>
+    <div>Product 6</div>
+    <div>Product 7</div>
+    <div >Product 8</div>
+</section>
+</html>

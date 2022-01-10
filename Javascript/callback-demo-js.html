@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function func0()
+        {
+            document.write("<br>Inside func0");
+            return 1000;
+        }
+        function func1()
+        {
+            document.write("<br>Inside func1");
+        }
+        //Function in JS can accept functions as a parameter1
+        //Here we have a Function that accepts f,which is a function,
+        //Since are invoking it as f() inside the body.
+        function func2(a,f,g)
+        {
+            document.write("<br>Inside func2 a=" +a+" "+f);
+            f();
+            g();
+        }
+
+        func2(20);//resize image to 200*200
+        func0();//applying red filter
+        func1();//applying object detection
+
+        func2(20);//resize image to 200*200
+        func0();//applying gaama filter
+        func1();//applying object detection
+
+        
+       //Instead of below code we can use above code
+        func2(20,func0,func1);
+        //func2(20,func0());
+    </script>
+</html>

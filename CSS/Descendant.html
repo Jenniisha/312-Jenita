@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        ul li{
+            color:green;
+            list-style-type: squre;
+        }
+        ul > li{
+            color:red;
+            list-style-type: squre;
+            list-style-type: upper-roman;
+        }
+        /*Adj sibling*/
+    h3+p{
+        border:2px solid;
+    }
+    /*General sibling*/
+        h2~p{
+            border:5px dashed;
+        }
+    </style>
+<body>
+
+
+    <a href="css-pseudo-classes.html">Link 1</a>
+    <p>The selector does not match this paragraph 1 it is not an.</p>
+    <h2>Heading</h2>
+    <p>The seector above matches this paragraph</p>
+    <h2>Heading</h2>
+    <p>The above matches this paragraph 2</p> 
+    <p>The selector above matches this paragraph 3 </p>
+    <p>The selector above matches this paragraph 4 </p>
+    
+    <p>The selector does not match this paragraph 1 it is not an.</p>
+    <h3>Heading</h3>
+    <p>The seector above matches this paragraph</p>
+    <h2>Heading</h2>
+    <p>The above matches this paragraph 2</p> 
+    <p>The selector above matches this paragraph 3 </p>
+    <p>The selector above matches this paragraph 4 </p>
+    
+  <ul>
+    <li>Item 1</li>
+        <li>
+            <ol>
+                <li>Sub-item -2A</li>
+                <li>Sub-item-2B</li>
+            </ol>
+        </li>
+    </ul>
+</body>
+
+</html>

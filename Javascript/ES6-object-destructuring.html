@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="=en">
+    <head>
+        <meta charset="utf-8">
+        <title>Object Destructuring</title>
+    </head>
+    <script>
+        var str="hello";//str holds a string Literal
+        var car1= {
+          price:1000,
+          color:"red",
+          weight:100
+      };//car1 is an object literal
+      
+      // If others object to print we have to pass the parameters
+      function displayDetails(c)
+      {
+      document.write(`<hr><br>Price is car1 ${c.price} 
+      and weight is ${c.weight}`);
+      };
+      displayDetails(car1);
+    
+      //object destructuring
+      function displayDetails2(p,w)
+      {
+      document.write(`<hr>In displayDetails2<br>Price is car1 ${p} 
+      and weight is ${w}`);
+      };
+      displayDetails2(car1.price,car1.weight);
+
+//ES6
+function displayDetailsES6({price,weight})
+      {
+      document.write(`<hr>In displayDetailsES6<br>Price is car1 ${price} 
+      and weight is ${weight}`);
+      };
+      displayDetailsES6(car1);
+
+
+//before people pass my object destrure it and extract the price and give it to me
+
+function displayDetailsES62(car)
+{
+    var{price}=car;
+    document.write(`<hr>In displayDetailsES62 <br> Price is ${price}`);
+    
+   
+    var {weight}=car;
+    car.weight=20000000;
+     document.write(`<hr>In displayDetailsES62 <br> Weight is ${weight}`);
+    
+
+};
+displayDetailsES62(car1);
+
+//Extract price from car and store in pr
+function displayDetailsES63(c)
+{
+    var{price:pr}=c;
+    document.write(`<hr>In displayDetailsES63 <br> Price is ${pr}`);
+    
+    c.weight=20000000;
+    var {weight}=c;
+    
+     document.write(`<hr>In displayDetailsES63 <br> Weight is ${weight}`);
+    
+
+};
+displayDetailsES63(car1);
+
+
+
+
+      //Object destructuring of abuilt -in object navigator
+      function f({appCodeName,appVersion})
+      {
+          document.write("\n\n\n\nappCodeName="+appCodeName+"and appVersion="+appVersion)
+      };
+      f(navigator);
+
+
+    </script>
+    <body>
+        <body>
+            <header style="font-size:24pt;color:aliceblue;background-color:black;
+            text-align: center;;">ES6 object destructuring</header>
+        </body>
+    </body>
+</html>

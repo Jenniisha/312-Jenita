@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<canvas id="myCanvas" width="400" height="400" style="background-color: blue;">
+</canvas>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.fillStyle = "#FF00CC";
+    ctx.fillRect(50, 50, 40, 100);
+
+    ctx.moveTo(10,45);
+    ctx.lineTo(180,47);
+    ctx.stroke();
+    </script>
+    <script>
+
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+var x = canvas.width / 2;
+var y = canvas.height / 2;
+var radius = 75;
+var startAngle = 1.2 * Math.PI;
+var endAngle = 1.95 * Math.PI;
+var counterClockwise = false;
+context.beginPath();
+context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+context.lineWidth = 20;
+context.strokeStyle = 'black';
+context.stroke();
+
+</script>
+
+<script>var c = document.getElementById("myCanvas");
+    var context = c.getContext("2d");
+    context.font = "30px Arial";
+    //context.fillText("Hello World", 10, 50);
+
+    context.font = "30px Arial";
+    context.strokeStyle = '#ff0000'; //red
+    context.stroke();
+    context.shadowColor = '#00ff00'; // green shadow
+    context.shadowOffsetX = 1;
+    context.shadowOffsetY = 1;
+    context.shadowBlur = 1;
+    context.fillText("Internet is a great place to learn!!", 10,50);
+</script>
+<script>
+  var  c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+var img = new Image();
+img.src = '/images/a1.png';
+ctx.drawImage(img,10,10);
+
+</script>

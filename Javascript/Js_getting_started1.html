@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var answer=4200;
+            console.log("Value of my answer variable"+ answer)
+          
+          var someVar="one line  \n another line";
+            console.log(someVar);
+
+       myArray=new Array(4);
+       myArray[0]=100;
+       myArray[1]=101.2;
+       myArray[2]=false;
+       myArray[3]="Hello";
+       myArray[4]="fifth";
+
+       //Observation:Array in JS can hold a mix of datatypes.
+       //Array can grow in JS.
+
+       myArray.pop();
+       myArray.push(6);
+       myArray.shift();
+       delete myArray[2];
+       //Removes 1 element starting at index 2
+       //Toremove a particularly indexed array element.
+       //One alternate way is delete myArray[2]
+       myArray.slice(2,1);
+       myArray2=[1,2,true,true,"Hello"];
+       
+       
+       console.log(myArray);
+
+            document.write(4200);
+            document.write(someVar.replace("\n","<BR>"));
+            document.write(myArray);
+            document.write(myArray.length);
+
+
+            //Control Statements
+            //1.If
+            var var1=10;
+            var var2=24;
+            //Shallow comparision
+            if(var1==var2) 
+            {
+                document.write("<br/>Values are equal");
+            }
+            else
+            {
+               document.write("<br/>Values are not equal")
+            }
+
+
+             //deep comparision of both datatype
+            if(var1===var2) 
+            {
+                document.write("<br/>Values are equal");
+            }
+            else
+            {
+               document.write("<br/>Values are not equal")
+            }
+
+            //using >
+            if(var1>var2)
+            {
+                document.write("<br/>Var1 is greater");
+            }
+            else
+            {
+               document.write("<br/>var2 is lesser")
+            }
+
+            //For Demo
+            var n=0;
+            for(var i=0;i<3;i++)
+            {
+                n+=i;
+                document.write("&nbsp;"+i);
+            }
+
+            //While demo
+            document.write("<br/>While demo<br/>");
+            var n=0;
+            var x=0;
+            do{
+                n++;
+                x+=n;
+      document.write("&nbsp; The value of n is"+n);
+            }while(n<3);
+
+            //Switch demo
+            var day="WED";
+            switch(day)
+            {
+                case "MON":document.write("<br/>Case 0<br/>");break;
+                case "TUE":document.write("<br/>Case 1<br/>");break;
+                case "WED":document.write("<br/>Case 2<br/>");break;
+                default:document.write("<br/>Default<br/>");
+            }
+
+            //Functions demo
+            //Function declaration
+            //They should start with "function" keyword and have name A NAME
+            function popalert(x)
+            {
+                alert("This is an alert box."+x.length);
+
+            };
+            
+            popalert(5);
+            popalert([5]);//perfectly ok
+            //Legal to call without passing value to the parameter,but 
+            //The function will throw error
+            popalert();
+
+            //Object creation from functions
+            function car()
+            {
+                var price;
+
+                display:             
+                   {
+                    alert('Cars price is'+price);
+                }
+
+            };
+            var c1=new car(1000);
+           cl.display();
+
+
+           //Another way of creating objects using JSON structure
+           var c2={
+               price:1000,
+               color:"blue",
+
+               display2:function d()
+               {
+                   alert("c2 objects price is"+this.price);
+               }
+           };
+           c2.display2();
+           c2.price=100000500;
+           c2.color="red";
+           c2.display2();
+
+           //ES6 onwards only
+           document.write("<hr>Creating classes and objects of the class<hr>");
+           class Bus{
+            
+               constructor(pr,color)
+              {
+                this.price=pr;
+                this.color=color;
+               }
+            display2=function f()
+               {
+               document.write("<br>c2 Objets price is" +this.price);
+               document.write("<br>c2 objects color is"+this.color);
+               }
+               setPrice=function(x)
+               {
+                   this.price=x;
+               }
+
+           };
+           var bus1=new Bus();
+           document.write("<br> Bus1 price is " + bus1);
+           bus1.display();
+
+           var bus1=new Bus(10500);
+           document.write("<br> Bus1 price is " + bus1.price);
+
+           var bus2=new Bus(10500,"red");
+           document.write("<br> Bus1 price is " + bus2.price + "and color is"+bus2.color);
+          
+          
+          </script>
+    </head>
+    <body>
+       
+    <script>
+//popalert([5000,400]);
+    </script>
+    </body>
+</html>

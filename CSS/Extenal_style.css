@@ -1,0 +1,23 @@
+
+        p{
+            color:blueviolet;
+        
+        }
+        a{
+            text-decoration: underline;color:black;
+       
+        }
+        h3{
+            text-decoration: underline;
+        }
+        .remove_underline
+        {
+            text-decoration: none;
+
+        }
+        .yellow-bg-class
+        {
+            background-color: yellow;
+     
+        }
+   

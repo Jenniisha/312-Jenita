@@ -1,0 +1,58 @@
+
+<form action="" novalidate>
+<div style="background-image;:rgb(0, 119, 255)">
+<center><h1>Sign Up</h1>
+<p>Please fill in the details to create an account with us.</p>
+<label for="text"><b>Enter Name</b></label>
+<input type="text" placeholder="Enter name" name="name" required><br/><br/>
+<label for="email"><b>Enter Email</b></label>
+<input type="text" placeholder="Enter Email" name="email" required>
+<br/><br/>
+<label for="pwd"><b>Password</b></label>
+<input type="password" placeholder="Enter Password" name="pwd" required>
+<br/><br/>
+<label for="confirm"><b>Confirm Password</b></label>
+<input type="password" placeholder="Confirm Password" name="confirm" required>
+<br/><br/>
+
+<label for="dob"><b>Date Of Birth</b></label>
+<input type="date" placeholder="Date Of Birth" name="dob" required>
+<br/><br/>
+<Label>Gender</Label>
+
+<input type="checkbox" value="gender" name="Male">Male
+<input type="checkbox" value="gender" name="Female" required >Female
+<br/><br/>
+
+<br/><br/>
+<label>Telephone number</label>
+<input type="tel"  name="Telephone" pattern="[1-9{1}[0-9]{9}">
+  <br/><br/>
+  <br/><br/>
+  <label>   
+    Products:  
+    </label>
+<datalist id="browserOptions">
+    <option value="Kurtis">
+    <option value="Jeans">
+        <option value="Jackets">
+            <option value="Salwars">
+
+</datalist>
+<input list="browserOptions">
+<br/><br/>
+
+<label>Select Quantity:</label>
+<input type="number"  name="quantity" min="1" >
+
+<br/><br/>
+<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+<button type="submit" class="registerbtn"><strong>Register</strong></button>
+
+<div class="container signin">
+<p>Already have an account? <a href="#">Sign in</a>.</p>
+</div>
+</div>
+
+</form>
+</center>

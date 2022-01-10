@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        //We can pass functions as parameters in Js
+        function add(x,y)
+        {
+            return x+y;
+        }
+        function multiply(x,y)
+        {
+            return x*y;
+        }
+
+        function func2(a,b,f)
+        {
+            //step 1:resize
+            //-----
+            //------
+            var p=f(a,b);//add(10,20)
+
+            //step 12
+            //step 15
+            filter2();
+            //step 17 to
+            document.write("<br>"+p);
+        }
+        func2(10,20,add);//??prints 30
+        func2(10,20,multiply);
+       // func2(10,20,binarysort);
+        func2(10,20,filter1,filter2);
+      
+ </script>
+</html>

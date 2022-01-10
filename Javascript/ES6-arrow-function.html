@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="=en">
+    <head>
+        <meta charset="utf-8">
+        <title>Arrow Functions</title>
+
+    </head>
+
+<script>
+    function f1()
+    {
+        document.write(`<h1>Inside f1<br>`);
+    }
+    fl();
+    
+        //Some function above using arrow notations.
+        f2=()=>  document.write(`<hr>Inside f2<br>`);
+           
+        f2();
+    //An arrrow function that takes 1 parameter
+    f3=(a)=>{document.write(`<hr>Inside f3 a is ${a} <br>`);};
+    
+    f3(10);
+//An arrrow function that takes 2 parameter
+f4=(a,b)=>{document.write(`<hr>Inside f4 a,b iis ${a},{b} <br>`);};
+f4(5,"abc");
+
+
+//An arrrow function that takes 2 parameter and return value
+f4=(a,b)=>{return(a+b)};
+var val1=f5(5,6);
+document.write(`<hr>Addition value from f5 is ${val1}<br>`);
+
+</script>
+
+
+    <body>
+        <header style="font-size:24pt;color:aliceblue;background-color:black;
+        text-align: center;;">ES6 Arrow Functions</header>
+    </body>
+    </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script>
+    //We can pass functions as parameters in Js
+    function discount(price, percentage) {
+        return (price * percentage) / 100;
+    }
+    function offer(price) {
+        document.write(price / 20);
+        return price / 2;
+    }
+
+    function finalprice(price, percentage, f, g) {
+        if (price > 50) {
+            var k = f(price);
+        }
+        else {
+            k = price;
+        }
+        var o = g(k, percentage);
+        return o;
+    }
+
+    var f = finalprice(100, 30, offer, discount);
+    document.write("<br> Final Price of 100 and 30 is:  ");
+    document.write("" + f);
+</script>
+
+</html>

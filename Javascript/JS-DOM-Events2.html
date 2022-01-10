@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Events</title>
+    <header style="font-size: 24pt; color:white; background-color: black; text-align: center;">DOM Events</header>
+    <div id="logger">DOM Events</div>
+</head>
+<script>
+    var logg= document.getElementById("logger");
+    f = (ele) => alert(`Inside function f. ${ele} event `);
+ 
+    // event handler that  printr which type of htmlevent happened
+    g = (evt) => logg.innerHTML = `Inside function g. ${evt} event` ;
+     // event handler that  printr which who generated that htmlevent 
+    g1 = (evt) => logg.innerHTML =`Inside function g1. ${evt.target} is target ${i++}times `;    // event handler that  printr what content is there inside that target 
+    g2 = (evt) => logg.innerHTML =`Inside function g2. ${evt.target.innerHTML} is the content `;
+ 
+     remF=()=>{
+     document.getElementById("p2").removeEventListener("mouseover",g);
+     document.getElementById("p2").removeEventListener("mouseenter",g1);
+ };
+ imgEH1=(evt)=>`${evt.target.width=300} 
+ ${evt.target.height=300}`;
+
+ imgEH2=(evt)=>`${evt.target.width=120} 
+ ${evt.target.height=120}`;
+     </script>
+<body>
+    <p id="p1" >para 1</p>
+    <p id="p2" style="border: 2px ridge red;display:inline"">paragraph 2</p>
+    <br>    <br>
+     <p>para 3</p>
+     <p>para 4</p>
+    <div onmouseover="f('div');" style="border: 2px ridge orange; display:inline"> div 1</div>
+    <br> <br>
+    <button onclick="f('button');"> button 1</button>
+    <br> <br>
+    <input id="t1" type="text" value="some text" />
+    <br> <br>
+ 
+    <img onclick="f('img');" style="border: 2px solid blue"
+     src="canvas.png" height="200" width="200">
+    <a onclick="alert(` link clicked `);" href="http://www.ibm.com"> Go to IBM </a>
+ 
+<script>
+    var para2 = document.getElementById("p2");
+    para2.addEventListener("mouseover", g);
+    para2.addEventListener("mouseenter", g1);
+    //para2.addEventListener("click", g1); // we can attach another EH for another type of event
+   // para2.addEventListener("mouseleave", g2);
+ 
+    document.getElementById("p1").addEventListener("click", g);
+    document.getElementById("t1").addEventListener("change", g);
+ 
+    
+    var arrayOfPTags=document.getElementsByTagName("p");
+    for(tag in arrayOfPTags)
+    {
+        pTag.addEventListener("mouseover",g);
+    }
+
+    var arrayOfPTags=document.getElementsByTagName("img");
+    for(tag in arrayOfPTags)
+    {
+        imgTag.addEventListener("mouseover",imgEH1);
+        imgTag.addEventListener("mouseout",imgEH2);
+    }
+</script>
+ 
+ 
+</body>
+ 
+</html>

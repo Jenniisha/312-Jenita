@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <script src="my-js-classes.js">
+
+    </script>
+
+
+<p id="myp1">Some para</p>
+
+<div>
+    <p>para 2</p>
+    <a href="http://www.oracle.com" id="myA1">This is link to Oracle</a>
+</div>
+
+<button onmouseover="applyBordeer();">Click me to change the borders of p</button>
+
+    <script>
+//Accessing HTML elements using their Id
+   var x=document.getElementById("myp1");
+   x.innerHTML="new para";
+
+   var y=document.getElementById("myA1");
+   //alert(y.innerHTML);
+   y.innerHTML="This is link to IBM";
+
+
+function applyBorder()
+{
+//Accsessing HTML Elements using tags
+var z=document.getElementsByTagName("p");
+alert(`No of p tags in the web page is: $[z.length]`);
+
+for(elem of  z )
+ {
+
+  // elem.innerHTML="blah blah";
+   elem.style="border:3px solid lightblue";
+
+};
+}
+
+    </script>
+
+
+
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>SPREAD OPERATOR</title>
+    </head>
+    <script>
+        //var logger =document.getElementById("logger");
+    
+        function average(a,b,c){
+            return (a+b+c)/3;
+        }
+    
+        //logger.innerHTML = `<br>Average of 10 20 30 is ${average(10,20,30)}` ;
+        document.write(`<br>Average of 10 20 30 is ${average(10,20,30)}`);
+    
+        var arr1 =[10,5,6,7,7,78,27,45,25,26];
+        // how can we find the avg of elements in arr1
+        var arr1Avg = average(...arr1 );
+        document.write(`<br>Average of array [10 24 30] is ${arr1Avg}}` );
+    
+        
+        var arr1 =[10,5,6,7];
+        var arr2 =[1,2,3,4];
+        var arr4=[2,4,5,6];
+        var arr3=[];
+
+        var i=0;
+        for(i=0;i<arr1.length;i++)
+        {
+            arr3[i]=arr1[i];
+        }
+        for(j=0;j<arr1.length;j++)
+        {
+            arr3[i++]=arr2[j];
+        }
+        document.write(`<br>Combined Array arr3 is= ${arr3}`);
+        document.write(`<br>Combined Array arr3 using concat is= ${arr1.concat(arr2)}`);
+
+
+        //Using spread operator
+        var arrCombined=[...arr1,...arr2,...arr4];
+        document.write(`<br>Combined Array using spread array is= ${arrCombined}`);
+    
+    </script>
+    
+<body>
+    <header style="font-size:24pt;color:aliceblue;background-color:black;
+    text-align: center;;">ES6 Spread Oerator</header>
+</body>
+    
+</html>

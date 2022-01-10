@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .link{
+        color:green
+    }
+    :visited{
+        color:red
+    }
+    a:hover{
+        color: yellow;
+    }
+    :focus
+    {
+      border:10px solid orchid
+    }
+    button:hover{
+        background-color: yellow;
+    }
+    /*Pseudo Elements*/
+   section p:first-letter
+    {
+        font-size:42pt;
+    }
+    section p::first-line{
+        font-size:24pt;
+    }
+    section p:first-child{
+        background-color: antiquewhite;
+    }
+    section:before
+    {
+        content:"Take this quiz before reading the section";
+    }
+    
+    section:after{
+
+        content:"If you liked this story,please subscribe to the channel";
+    }
+    ul li:nth-child(2)
+    {
+        color:coral
+    }
+    :selection{
+        background-color: greenyellow;
+    }
+
+</style>
+
+<a href="">Link 1</a>
+<br/>
+<br/>
+<a href="Descendant.html">Link 2 goes to other css</a>
+<br/><br/>
+<input type="text" size=40>
+<br/><br/>
+<button>I am a button</button> 
+<br/><br/>
+
+<section>blah blah
+<p id="para1">I am a paragraph</p>
+
+<p>This is second paragraph
+This is second paragraph
+This is second paragraph</p>
+</section>
+
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+</ul>
+
+
+</html>

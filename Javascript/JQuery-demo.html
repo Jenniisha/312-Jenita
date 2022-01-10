@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JQUERY</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <header style="font-size: 24pt; color:white; background-color: black; text-align: center;">JQUERY</header>
+    <div id="logger">JQUERY</div>
+</head>
+
+<script>
+    var logg = document.getElementById("logger");
+    f = (ele) => alert(`Inside function f. ${ele} event `);
+
+    imgEH1 = (evt) => `${evt.target.width = 300} ${evt.target.height = 300}`;
+    imgEH2 = (evt) => `${evt.target.width = 120} ${evt.target.height = 120}`;
+
+    pEH = () =>  $("p").html("HELOOOOO ");
+</script>
+
+<script>
+    $(document).ready(
+        () => {
+            $("img").mouseover(imgEH1);
+            $("img").mouseout(imgEH2); 
+            
+            $("[src]").click(pEH);
+        }
+    );
+
+</script>
+
+
+
+<body>
+    <p id="p1">para 1</p>
+    <p id="p2" style="border: 2px ridge red;display:inline"">paragraph 2</p>
+    <br>    <br>
+    <p>para 3</p>
+    <p>para 4</p>
+    <img style=" border: 2px solid blue" src="canvas.png" height="120" width="120">
+        <button id="button1"> Click me 1</button>
+        <button id="button2"> Click me 2</button>
+
+
+        </script>
+
+
+</body>
+
+</html>

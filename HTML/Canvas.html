@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<canvas id="myCanvas" width="400" height="400" style="background-color: blue;">
+</canvas>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.fillStyle = "#FF00CC";
+    ctx.fillRect(50, 50, 40, 100);
+
+    ctx.moveTo(10,45);
+    ctx.lineTo(180,47);
+    ctx.stroke();
+</script>

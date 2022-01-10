@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <script src="./ms-js-classes.js">
+
+    </script>
+    <script>
+        var a=10;//global scope
+        var bus1=new Bus(1000,"blue");//global scope
+
+        function f()
+        {
+            var x=5;//local scope
+            document.write(`<br> Inside f value f's local variabe x is${f}`);
+        };
+        document.write(`<br>Value of global variable is ${a}`);
+        document.write(`<br>Value of global variable bus1 is ${bus1.price}`);
+        f();
+        document.write(`<br>Value of global variable x is ${x}`);
+    </script>
+</html>

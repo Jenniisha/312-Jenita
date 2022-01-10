@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="=en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <header style="font-size:24pt;color:white;background-color: black;text-align:center;display:inline">HTML FORMS</header>
+       <hr><div id="logger"></div>
+       
+    </head>
+
+       
+</head>
+
+
+    <script>
+
+        
+        var logg = document.getElementById("logger");
+        clientSideFormProcessor = () => {
+            let formHandle = document.forms["userProfileForm"];
+            logg.innerHTML=
+            `LOGGER: First Name ${formHandle.firstName.value}
+            <br>Password : ${formHandle.mypassword.value}`;
+            
+            if(formHandle.mypassword.value.length<8)
+            {
+               formHandle.mypassword.style="background-color:red";
+            }
+        
+        }
+    
+    </script>
+    <body>
+        <hr><br>
+    
+        <form name="userProfileForm" action="form-processor.py" method="POST" >
+            <br>First name:  <input type=text name="firstName">
+           <br>Password:  <input type=password name="mypassword">
+           <br><br>
+           <input type="submit" onclick="clientSideFormProcessor(); return false;">
+        </form>
+    
+        
+        
+    </body>
+    </html>
+    

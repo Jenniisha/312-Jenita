@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <script>
+       function getPrice() {         
+ var numVal1 = Number(document.getElementById("price").value);
+ var numVal2 = Number(document.getElementById("discount").value);
+
+ var totalValue = numVal1 * ( (100-numVal2) / 100 )
+ document.getElementById("total").value = totalValue.toFixed(2);
+}
+    </script>
+</html>

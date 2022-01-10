@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Forms</title>
+    <header style="font-size: 24pt; color:white; background-color: black; text-align: center;">HTML FORM
+       PROCESSING</header>
+    <hr>
+    <div id="logger"></div>
+</head>
+<script>
+    var logg = document.getElementById("logger");
+    clientSideFormProcessor = () => {
+        let formIsGood=true;
+ 
+        let formHandle = document.forms["userProfileForm"];
+        logg.innerHTML =
+            `Summary: First Name ${formHandle.firstName.value}
+        <br>Password : ${formHandle.mypassword.value}`;
+ 
+        //Password validation example
+        if (formHandle.mypassword.value.length < 8) {
+            formHandle.mypassword.style = "background-color:red";
+            formIsGood=false;
+        }
+ 
+        //radio button validation
+        logg.innerHTML = logg.innerHTML +
+            `<br> Your movie choice is ${formHandle.movie.value}`;
+ 
+        // checkbox processing
+        let allMusicSelected = "";
+        for (let i = 0; i < formHandle.musicCB.length; i++) {
+            if (formHandle.musicCB[i].checked) {
+                //alert(" you ticked" + formHandle.musicCB[i].value);
+                allMusicSelected = allMusicSelected + "," + formHandle.musicCB[i].value;
+            }
+        };
+        logg.innerHTML = logg.innerHTML +
+            `<br> Your music choices are ${allMusicSelected}`;
+ 
+        //processing select list drop down
+        let allFruitsSelected = "";
+        for (let i = 0; i < formHandle.fruits.length; i++) {
+            if (formHandle.fruits[i].selected) {
+                //alert(" you selected " + formHandle.fruits[i].value);
+                //formHandle.fruits[i].style="color:yellow";
+                allFruitsSelected = allFruitsSelected + "," + formHandle.fruits[i].value;
+            }
+        };
+        allFruitsSelected=allFruitsSelected.substring(1);
+        logg.innerHTML = logg.innerHTML + `<br> Fruits : ${allFruitsSelected}`;
+ 
+        //Textarea processing
+        logg.innerHTML = logg.innerHTML + `<br> About me : ${formHandle.aboutTA.value}`;
+       // alert( "bad people found at index " +formHandle.aboutTA.value.indexOf("bad people"));
+        if(formHandle.aboutTA.value.indexOf("bad people") >0){
+            formHandle.aboutTA.style="color:red";
+            formIsGood= false;
+        };
+ 
+        //If we are satisfied with the forms, time to submit to the backend.
+        if(formIsGood==true){
+        alert("form details validated and looking good. Will submit to the backend now");
+        formHandle.submit();
+        } else{
+            alert("form details validated and NOT looking good. Will NOT submit to the backend now");
+        }
+ 
+    }
+ 
+</script>
+ 
+<body>
+    <hr><br>
+ 
+    <form name="userProfileForm" action="form-processor.py" method="POST">
+        <br>First name: <input type=text name="firstName">
+        <br>
+        <br>Password: <input type=password name="mypassword">
+ 
+        <br><br>
+        Which one is your favorite movie type?<br>
+        <input type="radio" name="movie" value="Action"> Action<br>
+        <input type="radio" name="movie" value="Thriller"> Thriller<br>
+        <input type="radio" name="movie" value="Fiction" checked="checked"> Fiction<br>
+        <input type="radio" name="movie" value="Romantic"> Romantic<br>
+ 
+        <br><br>
+        Which one is your favorite music?<br>
+        <input type="checkbox" name="musicCB" value="Meditation" checked="checked">
+        Meditation<br>
+        <input type="checkbox" name="musicCB" value="Western"> Western<br>
+        <input type="checkbox" name="musicCB" value="Classic"> Classic<br>
+        <input type="checkbox" name="musicCB" value="Romantic"> Romantic<br>
+ 
+        <br><br>Select your favorite fruit :
+        <select name="fruits" multiple>
+            <option value="apple">Apple</option>
+            <option value="Orange">Orange</option>
+            <option value="banana">Banana</option>
+            <option value="Grapes">Grapes</option>
+        </select>
+ 
+        <br><br>Tell us something about yourself :
+        <textarea name="aboutTA" cols=40 rows=5></textarea>
+ 
+        <br><br>
+        <input type="submit" onclick="clientSideFormProcessor(); return false;">
+    </form>
+ 
+ 
+ 
+</body>
+ 
+</html>

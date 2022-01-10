@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="=en">
+    <head>
+        <meta charset="utf-8">
+        <title>DOM EVENTS</title>
+        <header style="font-size:24pt;color:aliceblue;background-color:black;
+        text-align: center;">DOM EVENTS</header>
+
+    </head>
+<script>
+    f=(ele)=>alert(`Inside function f. ${ele} clicked`);
+</script>
+
+    <body>
+        <p onclick="f('p');">Para1</p>
+    
+       <div onmouseover="f('div');" style="border:1px ridge orange; display: inline;">Div Tag</div>"
+    
+       <button onclick="f('button');">Button 1</div>
+
+        <input onchange="f('input');" type="text" value="some text"/>
+        
+        <img onclick="f('img');" src="canvas.png" height="200" width="200">
+   
+        <img onclick="f('img');" src="canvas.png" height="200" width="200">
+
+        <a onclick="alert('Link clicked');" href="http://www.ibm.com">Go To IBM</a>
+    </body>
+    </html>

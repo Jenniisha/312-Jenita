@@ -1,8 +1,9 @@
-
 import mongoose from 'mongoose';
-//create the models
+
+// create the models
 import '../models/Product.js';
-const connectionStr = `mongodb://localhost:27017/Online_Store1`;
+
+const connectionStr = `mongodb://localhost:27017/Online-Store`;
 
 // connect() returns a Promise object
 mongoose
@@ -11,5 +12,5 @@ mongoose
         console.log( `connected to the DB` );
     })
     .catch(err => {
-        console.log( err );
+        console.log( err.message );
     });

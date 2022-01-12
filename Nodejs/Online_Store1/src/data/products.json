@@ -1,8 +1,8 @@
 [
     {
       "id": 1,
-      "name": "Leaf Rake",
-      "code": "GDN-0011",
+      "name": "Leaf Rake 2",
+      "code": "GDN-00112",
       "releaseDate": "Mar 19, 2016",
       "description": "Leaf rake with 48-inch wooden handle.",
       "price": 19.95,
@@ -11,8 +11,8 @@
     },
     {
       "id": 2,
-      "name": "Garden Cart",
-      "code": "GDN-0023",
+      "name": "Garden Cart 2",
+      "code": "GDN-00232",
       "releaseDate": "Mar 21, 2016",
       "description": "15 gallon capacity rolling garden cart",
       "price": 32.99,
@@ -21,8 +21,8 @@
     },
     {
       "id": 3,
-      "name": "Hammer",
-      "code": "TBX-0048",
+      "name": "Hammer 2",
+      "code": "TBX-00482",
       "releaseDate": "May 27, 2016",
       "description": "Curved claw steel hammer",
       "price": 8.9,
@@ -31,8 +31,8 @@
     },
     {
       "id": 4,
-      "name": "Saw",
-      "code": "TBX-0022",
+      "name": "Saw 2",
+      "code": "TBX-00222",
       "releaseDate": "Jul 15, 2016",
       "description": "15-inch steel blade hand saw",
       "price": 11.55,
@@ -41,8 +41,8 @@
     },
     {
       "id": 5,
-      "name": "Video Game Controller",
-      "code": "GMG-0042",
+      "name": "Video Game Controller 2",
+      "code": "GMG-00422",
       "releaseDate": "Aug 1, 2016",
       "description": "Standard two-button video game controller",
       "price": 35.95,

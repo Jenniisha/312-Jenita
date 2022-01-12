@@ -2,9 +2,10 @@
 const http=require('http');
 const url=require('url');
 
-const server=http.createServer((req,res)=>{
+const server=http.createServer((req,res)=>
+{
     //req url has the "request path"{for "http://localhost:3000/hello?format=upper&showDate=true",it is "/hello"}
-     const urlParts=url.parse(req.url,true);//url.parse("/hello?format="upper")
+const urlParts=url.parse(req.url,true);//url.parse("/hello?format="upper")
     console.log(urlParts);
 
     const word=urlParts.pathname.substring(1);

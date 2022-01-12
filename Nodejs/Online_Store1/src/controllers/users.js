@@ -1,7 +1,18 @@
-const getUsers = ( req, res ) => {
-    res.send( 'We will send list of users' );
-};
+/**
+ * Controller extracts information (query string parameters, path parameters etc., makes a call a call to the service to get data, and sends the response)
+ */
+ import { fetchUsers } from '../services/users.js';
 
-export {
-    getUsers
-};
+ const getUsers= ( req, res ) => {
+      fetchUsers() 
+      .then( users => {
+        res.json(users);
+      })
+      .catch(err => {
+        res.json(err.message);
+      });
+ };
+ 
+ export {
+     getUsers
+ };

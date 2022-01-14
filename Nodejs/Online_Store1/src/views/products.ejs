@@ -1,0 +1,12 @@
+<%- include( "header" ) -%>
+<h1 class="my-5">
+    List of Products
+    <br />
+    <small class="h4">The Awesome Online Store</small>
+</h1>
+<div>
+    <% for( let i = 0; i < products.length; i++ ) { %>
+        <div><%= products[i].name %></div>
+    <% } %>
+</div>
+<%- include( "footer" ) -%>

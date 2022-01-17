@@ -1,7 +1,11 @@
 import mongoose from 'mongoose';
+import reviewSchema from './Review.js';
 
 // schema for product
 const productSchema = new mongoose.Schema({
+    reviews: {
+        type: [ reviewSchema ],
+    },
     name: {
         type: String,
         required: true,
@@ -38,4 +42,5 @@ const productSchema = new mongoose.Schema({
 });
 
 // register the model
+// collection - products
 mongoose.model( 'Product', productSchema );

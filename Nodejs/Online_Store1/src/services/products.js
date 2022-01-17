@@ -42,10 +42,12 @@
  
    // we can pass exec() a function and that is called when the query completes
    // return Product.find( filterClause ).exec();
-   return Product.find(filterClause)
-     .sort(sortClause)
-     .skip(skipClause)
-     .limit(config.PAGE_SIZE);
+   return Product
+           .find(filterClause)
+           .select( 'name code releaseDate description price rating imageUrl' )
+           .sort(sortClause)
+           .skip(skipClause)
+           .limit(config.PAGE_SIZE);
  };
  
  const fetchProductById = (_id) => {
@@ -57,17 +59,53 @@
  };
  
  const updateProduct = ( _id, newProductDetails ) => {
-   return Product.findByIdAndUpdate( _id, newProductDetails, { new: true } );
+   // By default everything is $set
+   // {
+   //   $set: newProductDetails
+   // }
+ 
+   // NOTE: If you want to remove some property you need to create an updateClause this way and pass it instead to Product.findByIdAndUpdate
+   // const updateClause = {
+   //   $unset: {
+   //     description: true
+   //   }
+   // };
+ 
+   return Product.findByIdAndUpdate( _id, newProductDetails, { new: true, runValidators: true } );
  };
  
  const removeProduct = ( _id ) => {
    return Product.findByIdAndRemove( _id );
  };
  
+ const addReview = ( _id, review ) => {
+   return Product.findByIdAndUpdate( 
+     _id,
+     {
+       $push: {
+         reviews: review
+       }
+     },
+     {
+       new: true,
+       runValidators: true
+     }
+   );
+ };
+ 
+ const fetchReviews = ( _id ) => {
+   return Product
+           .findById( _id )
+           .select( 'reviews' )
+           .then(productReviews => productReviews.reviews)
+ }
+ 
  export {
    fetchProducts,
    fetchProductById,
    addProduct,
    updateProduct,
-   removeProduct
+   removeProduct,
+   addReview,
+   fetchReviews
  };

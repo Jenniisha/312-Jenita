@@ -7,7 +7,9 @@ import {
   fetchProductById,
   addProduct,
   updateProduct,
-  removeProduct
+  removeProduct,
+  addReview,
+  fetchReviews
 } from "../services/products.js";
 import HttpError from '../utils/HttpError.js';
 
@@ -148,4 +150,39 @@ const deleteProduct = ( req, res, next ) => {
     });
 };
 
-export { getProducts, getProductById, postProduct, putProduct, deleteProduct };
+// POST /:_id/reviews
+const postReview = (req, res, next) => {
+  const { _id } = req.params;
+  const { body } = req;
+
+  // check if the body is an empty object
+  if( Object.keys( body ).length === 0 ) {
+    const httpError = new HttpError( 'Request body is empty. Review details are missing.', 400 );
+    next( httpError );
+    return;
+  }
+
+  addReview( _id, body )
+    .then(product => {
+      res.status( 201 ).json( product );
+    })
+    .catch(err => {
+      const httpError = new HttpError( err.message, 400 );
+      next( httpError );
+    });
+};
+
+const getReviews = (req, res, next) => {
+  const { _id } = req.params;
+
+  fetchReviews( _id )
+    .then((reviews) => {
+        res.json(reviews);
+    })
+    .catch((err) => {
+        const httpError = new HttpError( err.message, 500 );
+        next( httpError );
+    });
+}
+
+export { getProducts, getProductById, postProduct, putProduct, deleteProduct, postReview, getReviews };

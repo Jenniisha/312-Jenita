@@ -22,7 +22,8 @@ const fetchUsers = (sort, order, filterRole, page) => {
     };
     //this queries the Online_Store1 DB
     // (Collection will be users)
-    return User.find(filterClause).sort(sortClause).skip(skipClause).limit(config.PAGE_SIZE);
+    return User.find(filterClause).select('-password')
+    .sort(sortClause).skip(skipClause).limit(config.PAGE_SIZE);
 };
 const fetchUserById = (_id) => {
     return User.findById(_id)

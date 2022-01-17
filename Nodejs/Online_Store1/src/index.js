@@ -9,6 +9,8 @@ import usersRouter from './routes/users.js';
 import indexRouter from './routes/pages/index.js';
 import productsPageRouter from './routes/pages/products.js';
 
+import authRouter from './routes/auth.js';
+
 import HttpError from './utils/HttpError.js';
 import fs from 'fs';
 import path from 'path';
@@ -38,6 +40,7 @@ app.use( express.json() );
 // extracts JSON data from a form and sets it up on req.body
 app.use( express.urlencoded() );
 
+app.use( '/auth', authRouter );
 app.use( '/products', productsRouter );
 app.use( '/users', usersRouter );
 

@@ -1,7 +1,8 @@
 const fs = require( 'fs' );
+const path = require( 'path' );
 
 // the function will be "called back" once the file has been read
-fs.readFile( '10-writting-a-file.js', ( err, contents ) => {
+fs.readFile( '04-arithmetic-demo.js', ( err, contents ) => {
     if( err ) {
         console.log( err.message );
         return;
@@ -12,7 +13,7 @@ fs.readFile( '10-writting-a-file.js', ( err, contents ) => {
 });
 
 // pass the file encoding as the second argument
-fs.readFile( '10-writting-a-file.js', 'utf-8', ( err, contents ) => {
+fs.readFile( path.join( __dirname, '..', 'references-nodejs-express.md' ), 'utf-8', ( err, contents ) => {
     if( err ) {
         console.log( err.message );
         return;

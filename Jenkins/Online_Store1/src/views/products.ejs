@@ -1,0 +1,25 @@
+<%- include( "header" ) -%>
+<h1 class="my-5">
+    List of Products
+    <br />
+    <small class="h4">The Awesome Online Store</small>
+</h1>
+<div class="row">
+    <% for( let i = 0; i < products.length; i++ ) { %>
+        <div class="col-12 col-lg-3 my-3">
+            <div class="card p-4">
+                <img src="<%=products[i].imageUrl%>" class="card-img-top" style="width: 40%; margin: 0 auto;">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <%=products[i].name%>
+                  </h5>
+                  <div class="card-text">
+                    <%=products[i].description%>
+                  </div>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+    <% } %>
+</div>
+<%- include( "footer" ) -%>

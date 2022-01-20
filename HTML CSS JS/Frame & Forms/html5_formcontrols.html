@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+</p>Defragmentation status:<p><progress max="100" value="80"></progress></p>
+<p>Clean up Status:<p><progres max="100" value="70"></progres></p>
+ <p>Overall status:<p><progress></progress></p>
+<form>
+    Select your house color:
+    <input type="color" name="houseColor">
+    <br/><br/>
+    
+    Select your house color:
+    <input type="color" name="houseColor" value="#ff0000">
+    <br/><br/>
+    Select your house color:
+    <input type="color" name="houseColor" value="rgb(255,0,0)">
+<br/><br/>
+<label>Select a time for backup: </label>
+<input type="time" format="hh:mm:ss" name="scheduledTime">
+<br/><br/>
+<label>Select a time for backup: </label>
+<input type="time" value="23:00" name="scheduledTime">
+<br/><br/>
+<label>Select a time for restricted time: </label>
+<input type="time" value="20:00" min="05:59:59" name="scheduledTime">
+<br/><br/>
+<label>Brthday </label>
+<input type="date"  name="bdaytime">
+<br/><br/>
+<label>Date for delay </label>
+<input type="date"  name="bdaytime" value="2022-01-10" min="2022-01-10">
+<br/><br/>
+<label>Date And Time</label>
+<input type="datetime-local"  name="bdaytime" >
+<br/><br/>
+<label>Select a week:</label>
+<input type="week"  name="treweekyear" >
+<br/><br/><label>Select a particular week:</label>
+<input type="week"  name="treweekyear" value="2022-W10" min="2022-W11">
+<br/><br/>
+<label>Select a particular month:</label>
+<input type="month"  name="policyMntYr" value="2022-01" min="2022-02">
+<br/><br/>
+
+<label>Select domain/Email:</label>
+<input type="email"  name="myemailid" maxlenghth="10">
+
+<br/><br/>
+<label>Select Quantity:</label>
+<input type="number"  name="quantity" min="1" max="5">
+
+<br/><br/>
+<br/><br/>
+<label>Select Range:(Select 1 to 10 in steps of 5)for feedback</label>
+<input type="range"  name="ponts" min="0" max="10" steps=5>
+
+<br/><br/>
+<label>Search</label>
+<input type="search"  name="googlesearch">
+ <br/><br/>
+
+ <br/><br/>
+<label>Telephone number</label>
+<input type="tel"  name="Telephone" pattern="[1-9{1}[0-9]{9}">
+  <br/><br/>
+ <br/><br/>
+<label>Add your homepage</label>
+<input type="url"  name="homepage">
+<br/><br/>
+
+<br/><br/>
+<label>Score Card</label>
+<p>Physics <meter id="00meter1" name="batsman1" value="65" min="0" max="100">65 out of 100</meter></p>
+<p>Maths<meter id="098" name="batsman2" value=0.6>60%</meter></p>
+<br/><br/>
+
+<p>Score Card with thresholds defined:</p>
+<p>Physics <meter value="35" min="0" max="100" low="40">35 out of 100 (Yellow in
+        Opera,FF )</meter>
+<p>Maths <meter value="0.76" high="60">76% (Green in Opera,FF )</meter>
+<p>Chemistry <meter value="96" low="90" high="94" max="100">96% (Red in Opera,FF
+        )</meter>
+
+        <br/><br/>
+<progress></progress>
+
+<br/><br/>
+Datalist
+<datalist id="browserOptions">
+    <option value="Internet Explorer">
+    <option value="Firefox">
+        <option value="Chrome">
+            <option value="Opera">
+
+</datalist>
+Input control using the above Datalist
+<input list="browserOptions">
+<br/><br/>
+
+<br /><br /> Output Contro demo
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+    0<input type="range" name="b" value="50" />100 +
+    <input type="number" name="a" value="10" /> =
+    <output name="result"></output>
+</form>
+
+
+
+<input type="submit">
+</form>
+
+<script> 
+    alert("Meter value:"+document.getElementById("00meter1").value);
+   document.getElementById("00meter1").value=100;
+   </script>
+    

@@ -1,0 +1,63 @@
+[
+    {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "password": "johndoe",
+        "role": "customer"
+    },
+    {
+        "name": "Jane Doe",
+        "email": "jane.doe@example.com",
+        "password": "janedoe",
+        "role": "admin"
+    },
+    {
+        "name": "manoj",
+        "email": "manoj@gmail.com",
+        "password": "Test@123",
+        "role": "customer"
+    },
+    {
+        "name": "Jenita",
+        "email": "jenita@gmail.com",
+        "password": "Test@1234",
+        "role": "customer"
+    },
+    {
+        "name": "Josline",
+        "email": "Joslinej@gmail.com",
+        "password": "Test@12356",
+        "role": "customer"
+    },
+    {
+        "name": "Jerald",
+        "email": "Jeraldj@gmail.com",
+        "password": "1234",
+        "role": "customer"
+    },
+    {
+        "name": "nathalia",
+        "email": "nathalia@gmail.com",
+        "password": "fggd123",
+        "role": "customer"
+    },
+    {
+        "name": "Joseph",
+        "email": "joseph@gmail.com",
+        "password": "joseph123",
+        "role": "customer"
+    },
+    {
+        "name": "Ranjita",
+        "email": "Ranjita@gmail.com",
+        "password": "rann123",
+        "role": "customer"
+    },
+    {
+       "name": "Ankitha",
+       "email": "ankitha@gmail.com",
+       "password": "anki123",
+        "role": "customer"
+    }
+
+]

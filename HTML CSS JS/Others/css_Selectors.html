@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<style>
+    ul li {
+        color: green;
+    }
+
+    ul>li {
+        color: rgb(224, 96, 22);
+        list-style-type: upper-roman;
+    }
+
+     /* Gen Sibling */
+     h2~p {
+        border: 2px dashed;
+    }
+
+    /* Adj Sibling */
+    h3+p {
+        border: 2px solid;
+    }
+
+   
+</style>
+
+<a href="css-pseudo-classes.html">Link 2 goes to other css</a>
+
+<body>
+    <p>The selector does not match this paragraph 1 as it is not an .</p>
+    <h2>Heading</h2>
+    <p>The selector above matches this paragraph 2</p>
+    <p>The selector above does not match this paragraph 3</p>
+    <p>The selector above does not match this paragraph 4</p>
+
+    <p>The selector does not match this paragraph 11 as it is not an .</p>
+    <h3>Heading 3</h3>
+    <p>The selector above matches this paragraph 12</p>
+    <p>The selector above does not match this paragraph 13</p>
+    <p>The selector above does not match this paragraph 14</p>
+
+    <p>The selector does not match this paragraph 21 as it is not an .</p>
+    <h3>Heading 3</h3>
+    <p>The selector above matches this paragraph 22</p>
+    <p>The selector above does not match this paragraph 23</p>
+    <p>The selector above does not match this paragraph 24</p>
+
+
+
+    <ul>
+        <li>Item 1</li>
+        <li>
+            <ol>
+                <li>Sub-item 2A</li>
+                <li>Sub-item 2B</li>
+            </ol>
+        </li>
+    </ul>
+</body>
+
+
+
+</html>

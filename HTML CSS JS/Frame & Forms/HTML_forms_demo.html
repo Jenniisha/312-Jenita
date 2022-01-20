@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<form>
+    <br /><br />
+    <p>Defragmention Status:</p><progress max="100" value="80"></progress>
+    <p>Clean Up Status:</p><progress max="100" value="70"></progress>    
+
+    <br /><label>Select your house color:</label>
+    <input type="color" name="houseColor" value="rgb(255,0,0)">
+
+    <br /><br /><label>Select a time for backup:</label>
+    <input type="time" name="scheduledTime">
+
+    <br /><br /><label>Select a date to start the backup:</label>
+    <input type="date" name="bdaytime" min="2022-01-10">
+
+    <br /><br /><label>Select a date to start the backup: (date and time)</label>
+    <input type="datetime-local" name="bdaytime">
+
+    <br /><br />
+    Select a week:
+    <input type="week" name="trekWeekYear">
+
+    <br /><br />
+    Desired Example Start (week and year):
+    <input type="week" name="examWeekYr" value="2015-W01" min="2015-W01" max="2015-W52">
+
+    <br /><br />
+    <!-- Desired Insurance Policy Start (month and year):
+    <input type="month" name="policyMntYr" value="2000-01" min="2015-01" max="2021-01"> -->
+
+    <br /><br />
+    <p>Validation Works on Chrome to some extent. Doesn't work on FF </p>
+    E-mail: <input type="email" name="myYahooEmailID">
+
+    <br /><br />
+    Quantity (between 1 and 5):
+    <input type="number" name="quantity" pattern="[1-9]{1}[0-9]{2}">
+
+    <br /><br />Range type (select 1 to 10 in steps of 5) <br />
+    <input type="range" name="points" min="0" max="10" step=5>
+
+    <br /><br />    Home Telephone:
+    <input type="tel" name="homeTelephone" pattern="[1-9]{1}[5-9]{9}" 
+    title="Enter your 10 digit phone number in the 10 digit format start with 1-9 
+    and remaining 9 digits between 5 and 9">
+
+    <br /><br />
+    Add your homepage: <input type="url" name="homePage">
+
+    <br /><br />
+    <p>Score Card:</p>
+    <p>Physics <meter id="0001meter" name="batsman1" value="65" min="0" max="100">65 out of 100</meter><br>
+    <p>Maths <meter name="batsman2" value="0.6">60%</meter>
+
+        <br /><br />
+    <p>Score Card with thresholds defined:</p>
+    <p>Physics <meter value="35" min="0" max="100" low="40">35 out of 100 (Yellow in
+            Opera,FF )</meter>
+    <p>Maths <meter value="0.76" high="60">76% (Green in Opera,FF )</meter>
+    <p>Chemistry <meter value="96" low="90" high="94" max="100">96% (Red in Opera,FF
+            )</meter>
+
+        <br /><br />
+        Datalist
+        <datalist id="browsersOptions">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+        </datalist>
+
+        Inpur control using the above Datalist
+        <input list="browsersOptions">
+
+        <br /><br />
+        <input type="submit">
+
+</form>
+
+<br /><br /> Output Contro demo
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+    0<input type="range" name="b" value="50" />100 +
+    <input type="number" name="a" value="10" /> =
+    <output name="result"></output>
+</form>
+
+<script>
+    //alert("Meter value :" + document.getElementById("0001meter").value);
+    document.getElementById("0001meter").value = 100;
+
+</script>
+
+</html>

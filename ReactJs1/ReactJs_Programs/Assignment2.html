@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Local</title>
+  <script type="application/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+  <script type="application/javascript"
+    src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+  <script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+ 
+<body>
+  <div id="div1"></div>
+  <div id="div2"></div>
+ 
+  <script type="text/babel">
+    // Create a ES6 class component    
+    class ShoppingList extends React.Component {
+      // Use the render function to return JSX component      
+      render() {
+        return (
+          <div className="shopping-list">
+            <h1>Shopping List for {this.props.name}</h1>
+            <ul>
+              <li>Instagram</li>
+              <li>WhatsApp</li>
+              <li>Oculus</li>
+            </ul>
+          </div>
+        );
+      }
+    }
+ 
+ 
+ 
+ 
+ 
+ 
+    // Use the ReactDOM.render to show your component on the browser
+    //ReactDOM.render( <ShoppingList />,document.getElementById('root')   )
+ 
+    class Person extends React.Component {
+      render() {
+      //  var i=this.props.id;
+        var n = this.props.name;
+        var a=this.props.age;
+        var q=this.props.qualification;
+        var h=this.props.hobbies;
+       // var ad=this.props.address;
+
+        //let primaryNat = this.props.nationality[1];
+ 
+        //alert(` Diet is ${this.props.diet}`);
+ 
+        var allDietAsList = "";
+        for (let it of this.props.hobbies) {
+          allDietAsList = `${allDietAsList} <li> ${it} </li>`;
+        };
+        allDietAsList = `<ul> ${allDietAsList} </ul>`;
+        //alert(allDietAsList);
+ 
+        return (
+          <div>
+         <center>   <h4> {this.props.name}   {this.props.qualification}  </h4></center>
+     
+ 
+            <hr/>
+            <h4>Age:{this.props.age}</h4>
+            <h4>Qualification : {this.props.qualification.join(" , ")}</h4>
+            <h4>Hobbies : 
+ 
+        
+            <ul>
+              {
+                Array.from(this.props.hobbies).map(
+                  item => <li>{item}</li>)
+                
+              }
+            </ul>
+ </h4>
+            <h4>Nationality : {this.props.nationality}</h4>
+
+ 
+          </div>
+        );
+      }
+    }
+ 
+    
+ 
+ 
+    ReactDOM.render(<Person name="Jenita" age="24" qualification={['BCA','MCA']} hobbies={['Making Dreamcatcher','MandalaArt']} nationality="India" />, document.getElementById("div1"));
+    
+  </script>
+ 
+ 
+ 
+</body>
+ 
+</html>

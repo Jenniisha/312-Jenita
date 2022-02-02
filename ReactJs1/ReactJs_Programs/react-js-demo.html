@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Local</title>
+  <script type="application/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+  <script type="application/javascript" src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+  <script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+
+<body>
+  <div id="div1"></div>
+  <div id="div2"></div>
+
+<script type="text/babel">
+// Create a ES6 class component    
+    class ShoppingList extends React.Component { 
+// Use the render function to return JSX component      
+    render() { 
+        return (
+        <div className="shopping-list">
+        <h1>Shopping List for {this.props.name}</h1>
+          <ul>
+            <li>Instagram</li>
+            <li>WhatsApp</li>
+            <li>Oculus</li>
+          </ul>
+        </div>
+      );
+      } 
+    }
+
+
+
+// Use the ReactDOM.render to show your component on the browser
+    //ReactDOM.render( <ShoppingList />,document.getElementById('root')   )
+
+    class Bird extends React.Component { 
+        render(){
+            var c = this.props.colr;
+
+            return (
+            <h3>I am a  {this.props.nm} bird. My color is {c==undefined? "black" : c} </h3>
+            );
+        }
+    }
+
+    ReactDOM.render( <Bird nm="Peacock" colr="red"/>,   document.getElementById("div1") );
+    ReactDOM.render( <Bird nm="Eagle" />,   document.getElementById("div2") );
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Local</title>
+  <script type="application/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+  <script type="application/javascript"
+    src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+  <script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+ 
+<body>
+  <div id="div1"></div>
+  <div id="div2"></div>
+ 
+  <script type="text/babel">
+    // Create a ES6 class component    
+    class ShoppingList extends React.Component {
+      // Use the render function to return JSX component      
+      render() {
+        return (
+          <div className="shopping-list">
+            <h1>Shopping List for {this.props.name}</h1>
+            <ul>
+              <li>Instagram</li>
+              <li>WhatsApp</li>
+              <li>Oculus</li>
+            </ul>
+          </div>
+        );
+      }
+    }
+ 
+ 
+ 
+ 
+ 
+ 
+    // Use the ReactDOM.render to show your component on the browser
+    //ReactDOM.render( <ShoppingList />,document.getElementById('root')   )
+ 
+    class Bird extends React.Component {
+      render() {
+        var c = this.props.colr;
+ 
+ 
+        var color = (c == undefined) ? "black" : c;
+        const colStyle = {
+          "color": `${color}`,
+          "background": "yellow"
+        };
+ 
+        let primaryNat = this.props.nationality[1];
+ 
+        //alert(` Diet is ${this.props.diet}`);
+ 
+        var allDietAsList = "";
+        for (let it of this.props.diet) {
+          allDietAsList = `${allDietAsList} <li> ${it} </li>`;
+        };
+        allDietAsList = `<ul> ${allDietAsList} </ul>`;
+        //alert(allDietAsList);
+ 
+        return (
+          <div>
+            <h3>I am a  {this.props.nm} bird. </h3>
+            My color is : <h3 style={colStyle} > {color} </h3>
+ 
+            <hr/>
+            <h2>Demo of using Array in JSX. We can loop through using map method.</h2>
+            <br />My nationalities is: {this.props.nationality.join(" : ")}
+            <br />My Primary nationality is: {primaryNat}
+ 
+            <hr/>
+            <h2>Demo of using and looping Set in JSX</h2>
+            <br /><br />Diet : {Array.from(this.props.diet).join(" , ")}
+ 
+            <br /><br />1. Diet Set as HTML list from a JS variable above :{allDietAsList}
+            <br /> Note that it DOES NOT display as html list. Instead it is just a string!!
+ 
+            <br /><br /> To display it as a html list see below in 2.
+            <br /><br />2. Diet as HTML list :
+            <ul>
+              {
+                Array.from(this.props.diet).map(
+                  item => (<li>{item}</li>)
+                )
+              }
+            </ul>
+ 
+            <hr/>
+            <h2>Demo of using objects in JSX</h2>
+            <h3> I live on {this.props.nest.where} having  {this.props.nest.noOfRooms} rooms. </h3>
+            <h4> Total number of occupants in my nest is 
+              {this.props.nest.noOfRooms * this.props.nest.noOfOccupantsInEachRoom}  </h4>
+ 
+          </div>
+        );
+      }
+    }
+ 
+    var set1 = new Set();
+    set1.add("carrot");
+    set1.add("radish");
+    set1.add("potato");
+ 
+    // We can create objects and pass that as props to the component
+    var birdNest1 = {
+      "where": "mountain",
+      "noOfRooms": 4,
+      "noOfOccupantsInEachRoom": 2
+    };
+ 
+ 
+    ReactDOM.render(<Bird nm="Peacock" colr="red" nest={birdNest1} diet={set1} nationality={['Indian', 'American', 'Europian']} />, document.getElementById("div1"));
+    ReactDOM.render(<Bird nm="Eagle" colr="blue" diet={set1} />, document.getElementById("div2"));
+  </script>
+ 
+ 
+ 
+</body>
+ 
+</html>

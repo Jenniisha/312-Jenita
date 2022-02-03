@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Even or odd from 1 to 50</title> 
+</head>
+<body>
+     <h1>Print Even or odd from 1 to 50</h1>
+    <script>
+        var a = [];
+for (var i = 1; i <= 50; i++) {
+  a[i] = i;
+}
+for (var i = 1; i <= 50; i++) {
+    if(a[i] % 2 == 1){
+
+        document.write(a[i] + " is odd");
+        document.write("<br>");
+    }
+    else{
+         document.write(a[i] + " is even");
+         document.write("<br>");
+    }
+}
+    </script>
+    
+</body>
+</html>

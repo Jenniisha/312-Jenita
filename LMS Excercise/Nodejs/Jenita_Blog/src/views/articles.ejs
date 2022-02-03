@@ -1,0 +1,27 @@
+<%- include( "header" ) -%>
+  <h1 class="my-5">
+    List of Articles
+    <br />
+    <small class="h4">-----The Blog Website----</small>
+  </h1>
+  <div class="row">
+    <b> Here we go with all the articles</b>
+    <% for( let i=0; i < articles.length; i++ ) { %>
+      <div class="col-12 col-lg-3 my-3">
+        <div class="card">
+          <img src="<%=articles[i].imageUrl%>" class="card-img-top" style="width: 40%; margin: 0 auto" />
+          <div class="card-body">
+            <h2 class="card-title">
+              <%=articles[i].name%>
+            </h2>
+            <div class="card-text">
+              <%=articles[i].abstract%>
+            </div>
+            <!-- <a href="#" class="btn btn-primary">ADD TO CART</a> -->
+          </div>
+        </div>
+      </div>
+      <% } %>
+  </div>
+
+  <%- include( "footer" ) -%>

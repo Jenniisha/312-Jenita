@@ -10,9 +10,10 @@ import {
 import HttpError from "../utils/HttpError.js";
 
 
-const getArticles = (req, res) => { let { sort, order, page, q } = req.query;
+const getArticles = (req, res) => {
+  let { sort, order, page, q } = req.query;
   //convert a page to integer, and set a default of 1 or it is not passed
-  
+
   let pageInt = parseInt(page);
 
   if (isNaN(page)) {
@@ -43,7 +44,7 @@ const getArticleById = (req, res, next) => {
     .then((articles) => {
       if (!articles) {
         // 404 -> Not Found
-        const httpError = new HttpError("Article with given id does not exist",404);
+        const httpError = new HttpError("Article with given id does not exist", 404);
         next(httpError);
         return;
       }
@@ -64,12 +65,13 @@ const getArticleById = (req, res, next) => {
 };
 
 //POST /articles
-const postArticle = (req, res, next) => { const { body } = req;
+const postArticle = (req, res, next) => {
+  const { body } = req;
   console.log(Object.keys(body));
 
   // check if the body is an empty object
   if (Object.keys(body).length === 0) {
-    const httpError = new HttpError("Request body is empty. Articles are missing.",400);
+    const httpError = new HttpError("Request body is empty. Articles are missing.", 400);
     next(httpError);
     return;
   }
@@ -90,7 +92,7 @@ const putArticle = (req, res, next) => {
 
   // check if the body is an empty object
   if (Object.keys(body).length === 0) {
-    const httpError = new HttpError("Request body is empty. Articles are missing.",400);
+    const httpError = new HttpError("Request body is empty. Articles are missing.", 400);
     next(httpError);
     return;
   }
@@ -142,7 +144,7 @@ const postComment = (req, res, next) => {
   console.log(Object.keys(body));
   // check if the body is an empty object
   if (Object.keys(body).length === 0) {
-    const httpError = new HttpError("Request body is empty. Review details are missing.",400);
+    const httpError = new HttpError("Request body is empty. Comments details are missing.", 400);
     next(httpError);
     return;
   }

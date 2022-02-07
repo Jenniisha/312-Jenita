@@ -21,7 +21,7 @@ const fetchArticles = (sort, order, page, q) => {
     [sort]: order === "desc" ? -1 : 1,
   };
   return Article.find(filterClause)
-    .select("name title abstract articleBody imageUrl createdAt")
+    .select("name title abstract articleBody imageUrl createdAt comments")
     .sort(sortClause)
     .skip(skipClause)
     .limit(config.PAGE_SIZE);
@@ -34,8 +34,8 @@ const fetchArticleById = (_id) => {
 const addArticle = (article) => {
   return Article.create(article);
 };
-const updateArticle = (_id, newProductDetails) => {
-  return Article.findByIdAndUpdate(_id, newProductDetails, {
+const updateArticle = (_id, newArticleDetails) => {
+  return Article.findByIdAndUpdate(_id, newArticleDetails, {
     new: true,
     runValidators: true,
   });

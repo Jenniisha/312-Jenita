@@ -21,6 +21,7 @@ mongoose.connect(connectionStr)
   //const collections=mongoose.model("Players",playerSchema);
   //Players is the collection.
   const Players=mongoose.model("Players");
+  
 
   // Find all documents 
 Players.find({name:"Jenita"}, function (err, docs) {

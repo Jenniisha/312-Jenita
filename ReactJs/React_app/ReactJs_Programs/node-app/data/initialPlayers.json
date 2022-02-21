@@ -1,0 +1,40 @@
+ [
+    {
+        "name": "Jenita",
+        "age": 24,
+        "awards": ["National Award", "State Award"]
+    },
+    
+    {
+        "name": "Josline",
+        "age": 20,
+        "awards": ["National Award", "State Award"]
+    },
+    {
+        "name": "Nathalia",
+        "age":70,
+        "awards": ["National Award", "State Award"]
+    },
+    {
+        "name": "Jerald",
+        "age": 20,
+        "awards":["National Award", "State Award"]
+    },
+    {
+        "name": "Jevita",
+        "age": 70,
+        "awards": ["National Award", "State Award"]
+    }
+]
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

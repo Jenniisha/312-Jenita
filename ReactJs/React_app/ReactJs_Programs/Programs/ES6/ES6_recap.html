@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+    var a=10;//global scope
+    //var bus1=new Bus(1000,"blue");//global scope
+
+    function f(){
+        var x=0;//local scope
+        document.write(`<br>Inside f. value of f's local variable x is ${x}`);//0
+  
+  for(let x=1;x<5;x++){
+    document.write(`<br>Inside f. value of f's block variable x is ${x}`);// 1 2 3 4
+  };
+  document.write(`<br><br><br>Inside f. value of f's local variable x is ${x}`);//0
+   };
+   f();
+
+   let x=0;
+   let x=15;
+   const x=0;//cannot use same variable using const
+   const x=10;
+
+   //2nd one using arrow function
+   function f(a,b){
+       return a+b;
+   }
+   f=(a)=>a+10;
+
+
+
+   //Spread operator
+
+   var a1=[10,20,30];
+   average(A1[0],a[1],a[2]);
+
+   average(...a1);
+
+//split using baktick
+document.write(`<br>Average of 10 20 30 is $(average(10,20,30)}`);
+
+
+//rest oerator
+//it is used to gather things
+var arr1=[10,40,2,45,80];
+        </script>
+
+
+</html>

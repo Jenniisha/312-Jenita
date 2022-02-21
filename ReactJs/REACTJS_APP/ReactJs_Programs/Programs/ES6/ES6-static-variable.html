@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        class Apple{
+
+            static exportyear=1999;
+
+            constructor(n,c){
+                this.name=n;
+                this.color=c;
+            }
+        }
+
+        var apple1=new Apple("Kashmir","red");
+        var apple2=new Apple("shimla","rose");
+
+        alert("1"+apple1.name);
+        alert("2"+apple2.name);
+
+        alert("11"+ apple1.exportyear);
+        alert("12"+ apple2.exportyear);
+        alert("13"+ Apple.exportyear);
+
+
+        apple1.nam="Jammu";
+
+        Apple.exportyear=2020;
+
+        
+    </script>
+</html>

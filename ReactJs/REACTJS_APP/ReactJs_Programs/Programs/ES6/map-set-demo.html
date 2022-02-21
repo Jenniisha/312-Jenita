@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map And Set</title>
+    <header style="font-size:24pt; color:white; background-color: black;text-align:center"></header>
+<div id="logger">Logger</div>
+</head>
+<script>
+    var arr1=[10,20,45];
+    var arr2=new Array();
+    arr2.push(10)
+    arr2.push(20)
+    arr2.push(30)
+
+    document.getElementById(logger).innerHTML=`arr1 is ${arr1}`;
+    document.getElementById(logger).innerHTML=
+       `${document.getElementById(logger).innerHTML} <br> arr2 is ${arr2}`;
+    
+       document.getElementById(logger).innerHTML=
+       `${document.getElementById(logger).innerHTML} <br> SET Demo`;
+    
+
+       var set1=new Sset();
+       set1.add(10);
+       set1.add(20);
+       set1.add(30);
+       set1.add(20);
+       set1.add(50);
+       for (elem of set1){
+        document.getElementById(logger).innerHTML=
+       `${document.getElementById(logger).innerHTML} <br> set element is ${elem}`;
+    
+       };
+
+
+    
+    </script>
+</html>

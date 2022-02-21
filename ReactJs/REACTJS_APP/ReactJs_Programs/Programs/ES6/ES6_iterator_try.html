@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<script>
+    var range = {
+        from: 1,
+        to: 10
+    };
+
+    range[Symbol.iterator] = function () {
+
+        return {
+            current: this.from,
+            last: this.to,
+
+
+            next() {
+                //Give only odd numbers
+                this.current = this.current + 2;
+
+                if (this.current <= this.last) {
+                    return { done: false, value: this.current++ };
+                }
+                else {
+                    return { done: true };
+                }
+            }
+        };
+    };
+
+//console.log("From range next"+ range().next());
+//console.log("From range next"+ range().next());
+
+
+ console.log(range);
+ for (let i1 of range) {
+     console.log("From range" + i1);
+ }
+
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<script>
+    class Apple {
+        constructor(n, c, y) {
+            this.name = n;
+            this.color = c;
+            this.year = y;
+        }
+    };
+//Example
+//const f=function(a,b){
+  //  return a+b;
+//};
+
+//f(2,3);//5
+//f(3,5);//8
+//f(2,3);//5
+
+    const aGeneratorObject = function* () {
+        yield new Apple("A1", "red", 2000);
+        yield new Apple("A2", "blue", 2001);
+        yield new Apple("A3", "orange", 2012);
+    }();
+
+    document.write("Generator Demo<br/>");
+    for (let i of aGeneratorObject)
+    document.write(i.name+"&nbsp;");
+
+    var x=aGeneratorObject.next().value;
+    //alert(aGeneratorObject.next().value.name);//aGeneratorObject
+    //alert(aGeneratorObject.next().value.color);
+
+
+    //alert(aGeneratorObject.next().value.year);
+    x=aGeneratorObject.next().value;
+    //alert(aGeneratorObject.next().value.name);
+
+    //alert("end");
+</script>
+
+</html>

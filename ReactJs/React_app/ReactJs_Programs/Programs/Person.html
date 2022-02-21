@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Person React Component</title>
+  <script type="application/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+  <script type="application/javascript" src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+  <script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+  
+  <script type="text/babel">
+  // Create a ES6 class component    
+     
+  
+  
+  // Use the ReactDOM.render to show your component on the browser
+      //ReactDOM.render( <ShoppingList />,document.getElementById('root')   )
+  
+      class Person extends React.Component { 
+          render(){
+              //var n1 = this.props.name;
+
+  
+              return (
+              <h3>Person name is {this.props.name}, Date of Birth is {this.props.dob}, Gender is {this.props.gender}, Nationality is {this.props.nationality} </h3>,
+              <h3>Person name is {this.props.name}, Date of Birth is {this.props.dob}, Gender is {this.props.gender}, Nationality is {this.props.nationality} </h3>,
+              <h3>Person name is {this.props.name}, Date of Birth is {this.props.dob}, Gender is {this.props.gender}, Nationality is {this.props.nationality} </h3>
+              );
+          }
+      }
+  
+      ReactDOM.render( <Person name="Jenita"  gender="female" dob="10-06-1997" nationality="India"/>,   document.getElementById("div1") );
+      ReactDOM.render( <Person  name="Josline"  gender="female" dob="16-02-2002" nationality="India"/>,   document.getElementById("div2") );
+  </script>
+  
+  
+  
+  </body>
+  
+  </html>
